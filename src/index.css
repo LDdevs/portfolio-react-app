@@ -29,3 +29,9 @@
         hsla(242, 74%, 61%, 0.8)   
     )!important;
 }
+
+#scroll-reveal {
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-image: linear-gradient(90deg, red, blue);
+}

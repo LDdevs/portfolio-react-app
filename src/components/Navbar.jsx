@@ -25,7 +25,7 @@ const Navbar = () => {
 
       {/* Menu */}
 
-      <ul className='hidden md:flex'>
+      <ul className='hidden md:flex cursor-pointer' >
         <li><Link to="home" smooth={true} duration={500} >
           Home
         </Link></li>
@@ -37,6 +37,9 @@ const Navbar = () => {
         </Link></li>
         <li><Link to="work" smooth={true} duration={500} >
           Work
+        </Link></li>
+        <li><Link to="services" smooth={true} duration={500} >
+          Services
         </Link></li>
         <li><Link to="contact" smooth={true} duration={500} >
           Contact
@@ -63,6 +66,9 @@ const Navbar = () => {
         <li className='py-6 text-4xl'><li><Link onClick={handleClick} to="work" smooth={true} duration={500} >
           Work
         </Link></li></li>
+        <li className='py-6 text-4xl'><li><Link onClick={handleClick} to="services" smooth={true} duration={500} >
+          Services
+        </Link></li></li>
         <li className='py-6 text-4xl'><li><Link onClick={handleClick} to="contact" smooth={true} duration={500} >
           Contact
         </Link></li></li>
@@ -71,23 +77,23 @@ const Navbar = () => {
       {/* Social Icons */}
       <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
         <ul>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#ff66c4]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
-              href='/'
+              href='https://www.linkedin.com/in/lisa-downie/'
             >
               Linkedin <FaLinkedin size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#ff66c4]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
-              href='/'
+              href='https://github.com/LDdevs'
             >
               Github <FaGithub size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#ff66c4]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
               href='/'
@@ -95,7 +101,7 @@ const Navbar = () => {
               Email <HiOutlineMail size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#ff66c4]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
               href='/'

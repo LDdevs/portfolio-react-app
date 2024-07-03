@@ -9,7 +9,7 @@ import me from '../assets/lisapretty.png';
 const Home = () => {
     return (
 
-        <div name='home' className='w-full h-screen  bg-[#0a192f] bg-opacity-100'>
+        <div name='home' className='w-screen h-screen md:mx-[auto] bg-[#0a192f] bg-opacity-100 md:text-1xl'>
             {/* Colors
                 background - #0a192f
                 social icons - #ff66c4
@@ -22,8 +22,8 @@ const Home = () => {
 
                     
                     <p className='text-[#ff66c4] '>Hey, My name is </p>
-                    <h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>Lisa Downie</h1>
-                    <h2 id='scroll-reveal' className='animate-typing overflow-hidden whitespace-nowrap text-4xl sm:text-7xl font-bold text-[#8892b0]'>Front End Developer.   </h2>
+                    <h1 className='md:text-1xl text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>Lisa Downie</h1>
+                    <h2 id='scroll-reveal' className='md:text-1xl animate-typing overflow-hidden whitespace-nowrap text-4xl sm:text-7xl font-bold text-[#8892b0]'>Front End Developer.   </h2>
 
                     <p className='text-[#8892b0] py-4 max-w-[700px]'>I'm a passionate front-end developer with a flair for crafting engaging and user-friendly digital experiences. Welcome to my online showcase, where innovation meets design.</p>
                     <div>

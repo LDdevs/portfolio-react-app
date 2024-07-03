@@ -6,6 +6,7 @@ import ComingSoon from '../assets/cs-carousel.png';
 import WorkImg from '../assets/workImg.jpeg';
 import LD from '../assets/LDlogo.png';
 import Portfolio from '../assets/portfolio.png';
+import WedInv from '../assets/home-wi.png';
 
 const Work = () => {
     return (
@@ -104,20 +105,20 @@ const Work = () => {
                         </div>
                     </div>
 
-                    <div style={{ backgroundImage: `url(${ComingSoon})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
+                    <div style={{ backgroundImage: `url(${WedInv})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
               flex justify-center text-center items-center mx-auto content-div '>
 
                         {/* Hover Effects */}
                         <div className='opacity-0 group-hover:opacity-100'>
                             <div>
                                 <span className='text-2xl font-bold text-white tracking-wider'>
-                                    Coming Soon
+                                    Digital Wedding Invitation
                                 </span>
                                 <div className='pt-8 text-center '>
-                                    <a href="/">
+                                    <a href="https://weddinginvitesample.netlify.app/">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
                                     </a>
-                                    <a href="/">
+                                    <a href="https://github.com/LDdevs/WeddingInvitationsample">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
                                     </a>
                                 </div>

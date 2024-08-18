@@ -117,10 +117,7 @@ const Work = () => {
                                 Java Application - TicTacToe Game
                                 </span>
                                 <div className='pt-8 text-center '>
-                                    <a href="/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="/">
+                                    <a href="https://github.com/LDdevs/TicTacToe">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
                                     </a>
                                 </div>
@@ -137,10 +134,7 @@ const Work = () => {
                                     Java Application - ToDo List
                                 </span>
                                 <div className='pt-8 text-center '>
-                                    <a href="/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="/">
+                                    <a href="https://github.com/LDdevs/To-Do-List">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
                                     </a>
                                 </div>

@@ -53,10 +53,10 @@ const Work = () => {
                                     Digital Wedding Invitation
                                 </span>
                                 <div className='pt-8 text-center '>
-                                    <a href="https://lisadownie.netlify.app/">
+                                    <a href="https://weddinginvitesample.netlify.app/">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
                                     </a>
-                                    <a href="https://github.com/LDdevs/portfolio2">
+                                    <a href="https://github.com/LDdevs/WeddingInvitationsample">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
                                     </a>
                                 </div>
@@ -95,10 +95,10 @@ const Work = () => {
                                 Website Development - Break Website
                                 </span>
                                 <div className='pt-8 text-center '>
-                                    <a href="/">
+                                    <a href="https://breakwebsite.netlify.app/">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
                                     </a>
-                                    <a href="/">
+                                    <a href="https://github.com/LDdevs/BreakWebsite">
                                         <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
                                     </a>
                                 </div>

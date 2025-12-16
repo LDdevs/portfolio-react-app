@@ -1,47 +1,59 @@
-import React from 'react';
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { Link } from 'react-scroll';
-import Lisa from '../assets/menew2024.png';
-import lisapic from '../assets/lisapretty.png';
-import meatdesk from '../assets/meatdesk.jpg';
-import me from '../assets/lisapretty.png';
+/* 
+NOTE - THIS IS MY MAIN REPO FOR MY WEBSITE!
+*/
+
+
+import React from "react";
+import { ChevronDown } from "lucide-react";
+import LisaTransparent from "../assets/lisatransglasses.png"; // Background-removed image
 
 const Home = () => {
     return (
+        <section
+            id="home"
+            className="relative w-screen min-h-screen overflow-hidden bg-[#0a192f] text-white pt-24 px-6 lg:px-16"
+        >
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black opacity-90 z-0" />
 
-        <div name='home' className='w-screen h-screen md:mx-[auto] bg-[#0a192f] bg-opacity-100 md:text-1xl'>
-            {/* Colors
-                background - #0a192f
-                social icons - #ff66c4
-                text - text-gray-300
-            */}
+            {/* Content container */}
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full h-full">
 
-            {/* Container */}
-            <div className='flex flex-row max-w-[2000px] mx-auto px-8 justify-center h-full '>
-                <div className='max-w-full mx-auto px-8 flex flex-col justify-center h-full '>
+                {/* Left: Text Content */}
+                <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center w-full lg:w-1/2 gap-6">
 
-                    
-                    <p className='text-[#ff66c4] '>Hey, My name is </p>
-                    <h1 className='md:text-1xl text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>Lisa Downie</h1>
-                    <h2 id='scroll-reveal' className='md:text-1xl animate-typing overflow-hidden whitespace-nowrap text-4xl sm:text-7xl font-bold text-[#8892b0]'>Front End Developer.   </h2>
+                    {/* Vertical on desktop, horizontal on mobile */}
+                    <div className="text-blue-400 tracking-widest text-xl lg:text-2xl uppercase whitespace-nowrap lg:transform lg:-rotate-90">
+                        WEB DEVELOPER
+                    </div>
 
-                    <p className='text-[#8892b0] py-4 max-w-[700px]'>I'm a passionate front-end developer with a flair for crafting engaging and user-friendly digital experiences. Welcome to my online showcase, where innovation meets design.</p>
-                    <div>
-                        <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-[#ff66c4] hover:border-[#ff66c4] '><Link to="work" smooth={true} duration={500} >
-                            View Work
-                        </Link>
-                            <span className='group-hover:rotate-90 duration-300'>
-                                <HiArrowNarrowRight className='ml-3' />
-                            </span>
-                        </button>
+                    {/* Name Text */}
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-white">
+                            <span className="block">LISA</span>
+                            <span className="block text-cyan-400 tracking-tight">DOWNIE</span>
+                        </h1>
                     </div>
                 </div>
-                <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full hidden lg:flex'>
-                    <img className='rounded-full max-w-[500px] hover:scale-120 hover:rotate-6' src={me} alt="" />
+
+                {/* Right: Full-height Image */}
+                <div className="w-full lg:w-1/2 flex items-center justify-center mt-10 lg:mt-0">
+                    <img
+                        src={LisaTransparent}
+                        alt="Lisa Downie portrait"
+                        className="h-[60vh] sm:h-[70vh] lg:h-[80vh] object-contain drop-shadow-[0_0_60px_rgba(0,255,255,0.3)]"
+                    />
                 </div>
             </div>
-        </div>
-    )
-}
 
-export default Home
+            {/* Scroll indicator */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-white">
+                <span className="text-xs tracking-widest uppercase mb-1">Scroll</span>
+                <ChevronDown className="animate-bounce" size={28} />
+            </div>
+        </section>
+    );
+};
+
+
+export default Home;

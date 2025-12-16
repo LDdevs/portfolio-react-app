@@ -6,15 +6,27 @@ NOTE - THIS IS MY MAIN REPO FOR MY WEBSITE!
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import LisaTransparent from "../assets/lisatransglasses.png"; // Background-removed image
+import CodeBG from "../assets/webdev1.png"; //background image
 
 const Home = () => {
     return (
         <section
             id="home"
-            className="relative w-screen min-h-screen overflow-hidden bg-[#0a192f] text-white pt-24 px-6 lg:px-16"
+            className="relative w-screen min-h-screen overflow-hidden text-white pt-24 px-6 lg:px-16
+             bg-no-repeat bg-cover bg-center"
+            style={{
+                backgroundImage: `url(${CodeBG})`,
+            }}
         >
+            {/* <img
+                src={SpaceBG}
+                alt="planet bg"
+                className="h-[full] sm:h-[full] lg:h-[full] "
+            /> */}
+
             {/* Background gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black opacity-90 z-0" />
+            <div className="absolute inset-0 bg-black/80 z-0" />
+
 
             {/* Content container */}
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full h-full">
@@ -23,15 +35,17 @@ const Home = () => {
                 <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center w-full lg:w-1/2 gap-6">
 
                     {/* Vertical on desktop, horizontal on mobile */}
-                    <div className="text-blue-400 tracking-widest text-xl lg:text-2xl uppercase whitespace-nowrap lg:transform lg:-rotate-90">
-                        WEB DEVELOPER
+                    <div className="text-blue-400  text-2xl lg:text-5xl uppercase whitespace-nowrap lg:transform lg:-rotate-90">
+                        Welcome to my portfolio
                     </div>
 
                     {/* Name Text */}
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-white">
+                            <span className="block text-4xl">Hi! I'm</span>
                             <span className="block">LISA</span>
                             <span className="block text-cyan-400 tracking-tight">DOWNIE</span>
+                            <span className="block text-3xl">a front end web and app developer</span>
                         </h1>
                     </div>
                 </div>

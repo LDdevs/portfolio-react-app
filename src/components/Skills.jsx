@@ -1,77 +1,112 @@
-import React from 'react'
+export default function Skills() {
+  const skillGroups = [
+    {
+      title: "Frontend",
+      items: ["React", "JavaScript", "TypeScript", "HTML", "CSS"],
+    },
+    {
+      title: "Styling & UI",
+      items: ["TailwindCSS", "Responsive Design", "UI Systems", "Figma"],
+    },
+    {
+      title: "Tools",
+      items: ["Git", "GitHub", "Vite", "VS Code"],
+    },
+    {
+      title: "Concepts",
+      items: ["Component Design", "Accessibility", "Performance", "APIs"],
+    },
+  ];
 
-import HTML from '../assets/html.png';
-import CSS from '../assets/css.png';
-import JavaScript from '../assets/javascript.png';
-import ReactImg from '../assets/react.png';
-import Node from '../assets/node.png';
-import FireBase from '../assets/firebase.png';
-import GitHub from '../assets/github.png';
-import Tailwind from '../assets/tailwind.png';
-import JamStack from '../assets/jamstack.png';
-import Eleventy1 from '../assets/eleventy1.svg';
+  return (
+    <section id="skills" className="py-24 bg-[#0b0b0f] text-white relative overflow-hidden">
 
-import Python from '../assets/python.png';
+      {/* background glow (same system as Work/Hero) */}
+      <div className="absolute inset-0 -z-10 pointer-events-none opacity-20">
+        <div className="absolute top-[-20%] left-1/3 w-[450px] h-[450px] bg-cyan-500 blur-[160px] rounded-full" />
+        <div className="absolute bottom-[-20%] right-1/3 w-[450px] h-[450px] bg-purple-600 blur-[180px] rounded-full" />
+      </div>
 
-const Skills = () => {
-    return (
-        <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300 hover:shadow-lg dark:hover:shadow-black/30 '>
-            {/* Container */}
-            <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-                <div >
-                    <p className='text-4xl font-bold inline border-b-4 border-[#ff66c4] '>Skills</p>
-                    <p className='py-4'>// These are the technologies I've worked with</p>
-                </div>
+      <div className="max-w-6xl mx-auto px-6">
 
-                <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8  '>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={HTML} alt="HTML" />
-                        <p className='my-4'>HTML</p>
-                    </div>
+        {/* Header */}
+        <div className="mb-14">
+          <p className="text-xs tracking-[0.3em] uppercase text-cyan-400">
+            Skills
+          </p>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={CSS} alt="HTML" />
-                        <p className='my-4'>CSS</p>
-                    </div>
+          <h2 className="text-3xl md:text-4xl font-semibold mt-4">
+            What I work with
+          </h2>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={JavaScript} alt="HTML" />
-                        <p className='my-4'>JavaScript</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={ReactImg} alt="HTML" />
-                        <p className='my-4'>React</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={Tailwind} alt="HTML" />
-                        <p className='my-4'>Tailwind</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={Python} alt="HTML" />
-                        <p className='my-4'>Python</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={JamStack} alt="JamStack" />
-                        <p className='my-4'>JamStack</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#0d0416] hover:scale-110 duration-500 -inset-2 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500'>
-                        <img className='w-20 mx-auto' src={Eleventy1} alt="Eleventy" />
-                        <p className='my-4'>Eleventy</p>
-                    </div>
-
-                </div>
-                
-
-            </div>
+          <p className="text-zinc-500 mt-4 max-w-2xl leading-relaxed">
+            A focused set of tools and concepts I use to build modern,
+            scalable front-end experiences.
+          </p>
         </div>
-    )
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+
+          {skillGroups.map((group) => (
+            <div
+              key={group.title}
+              className="
+                p-6 rounded-2xl
+                border border-white/10 bg-white/5
+                transition duration-300
+                hover:-translate-y-2
+                hover:border-cyan-500/30
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]
+                relative overflow-hidden group
+              "
+            >
+
+              {/* glow overlay (same as Work section) */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition duration-300" />
+
+              {/* content */}
+              <div className="relative z-10">
+
+                <h3 className="text-lg font-medium mb-4 group-hover:text-cyan-200 transition">
+                  {group.title}
+                </h3>
+
+                <div className="flex flex-wrap gap-2">
+
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="
+                        text-xs px-3 py-1 rounded-full
+                        bg-black/40 border border-white/10 text-zinc-300
+                        transition duration-300
+                        group-hover:border-cyan-500/20
+                        group-hover:text-cyan-200
+                        group-hover:shadow-[0_0_10px_rgba(34,211,238,0.15)]
+                      "
+                    >
+                      {item}
+                    </span>
+                  ))}
+
+                </div>
+
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        {/* Bottom statement */}
+        <div className="mt-16 text-center">
+          <p className="text-zinc-500 max-w-xl mx-auto leading-relaxed">
+            I focus on building maintainable interfaces with clean structure,
+            reusable components, and strong attention to user experience.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
 }
-
-
-
-export default Skills

@@ -1,47 +1,75 @@
-import React from 'react';
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { Link } from 'react-scroll';
-import Lisa from '../assets/menew2024.png';
-import lisapic from '../assets/lisapretty.png';
-import meatdesk from '../assets/meatdesk.jpg';
-import me from '../assets/lisapretty.png';
+export default function Home() {
+  return (
+    <section className="min-h-screen flex items-center px-6 relative overflow-hidden bg-[#0b0b0f]">
 
-const Home = () => {
-    return (
+      {/* subtle animated gradient (keep ONE system only) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-600/10 bg-[length:200%_200%] animate-gradientMove" />
 
-        <div name='home' className='w-screen h-screen md:mx-[auto] bg-[#0a192f] bg-opacity-100 md:text-1xl'>
-            {/* Colors
-                background - #0a192f
-                social icons - #ff66c4
-                text - text-gray-300
-            */}
+      {/* soft glow (much more subtle than before) */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[180px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-1/4 w-[500px] h-[500px] bg-purple-600 blur-[180px] rounded-full" />
+      </div>
 
-            {/* Container */}
-            <div className='flex flex-row max-w-[2000px] mx-auto px-8 justify-center h-full '>
-                <div className='max-w-full mx-auto px-8 flex flex-col justify-center h-full '>
+      {/* CONTENT */}
+      <div className="max-w-6xl mx-auto relative z-10">
 
-                    
-                    <p className='text-[#ff66c4] '>Hey, My name is </p>
-                    <h1 className='md:text-1xl text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>Lisa Downie</h1>
-                    <h2 id='scroll-reveal' className='md:text-1xl animate-typing overflow-hidden whitespace-nowrap text-4xl sm:text-7xl font-bold text-[#8892b0]'>Front End Developer.   </h2>
+        {/* role label */}
+        <p className="text-cyan-400 tracking-[0.25em] uppercase text-xs mb-4">
+          Frontend Developer • React • UI Engineering
+        </p>
 
-                    <p className='text-[#8892b0] py-4 max-w-[700px]'>I'm a passionate front-end developer with a flair for crafting engaging and user-friendly digital experiences. Welcome to my online showcase, where innovation meets design.</p>
-                    <div>
-                        <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-[#ff66c4] hover:border-[#ff66c4] '><Link to="work" smooth={true} duration={500} >
-                            View Work
-                        </Link>
-                            <span className='group-hover:rotate-90 duration-300'>
-                                <HiArrowNarrowRight className='ml-3' />
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full hidden lg:flex'>
-                    <img className='rounded-full max-w-[500px] hover:scale-120 hover:rotate-6' src={me} alt="" />
-                </div>
-            </div>
+        {/* headline */}
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          I build{" "}
+          <span className="text-cyan-300">
+            modern web applications
+          </span>{" "}
+          with React
+        </h1>
+
+        {/* description */}
+        <p className="text-zinc-400 mt-6 max-w-xl leading-relaxed">
+          I design and develop performant, scalable interfaces using React,
+          TailwindCSS and modern frontend architecture. Focused on clean UI,
+          UX and maintainable code.
+        </p>
+
+        {/* tech stack */}
+        <div className="flex flex-wrap gap-2 mt-6">
+          {["React", "TailwindCSS", "TypeScript", "Node.js", "UI/UX"].map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5 text-zinc-300"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
-    )
-}
 
-export default Home
+        {/* buttons */}
+        <div className="mt-10 flex gap-4">
+          <a
+            href="#work"
+            className="px-6 py-3 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/25 transition"
+          >
+            View Projects
+          </a>
+
+          <a
+            href="#contact"
+            className="px-6 py-3 rounded-xl border border-white/10 text-white hover:border-cyan-500/30 hover:text-cyan-300 transition"
+          >
+            Contact Me
+          </a>
+        </div>
+
+        {/* subtle status line */}
+        <p className="text-zinc-500 text-sm mt-8">
+          Currently building: AI workflow tools & interactive dashboards
+        </p>
+
+      </div>
+    </section>
+  );
+}

@@ -22,6 +22,15 @@
     position: relative;
     
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
 .content-div{
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,4 +50,14 @@
     color: hsl(0 0% 100% / 0.2);
     background-clip: text;
     background-image: linear-gradient(90deg, red, blue);
+}
+
+.glow-hover {
+  transition: all 300ms ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.15),
+              0 0 50px rgba(168, 85, 247, 0.10);
+  transform: translateY(-2px);
 }

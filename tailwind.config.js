@@ -2,35 +2,19 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
 module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
-    
     extend: {
-      safelist: ['animate-[browse-in_0.5s]', 'animate-[browse-out_0.5s]'],
-      keyframes: {
-        typing: {
-          "0%": {
-            width: "0%",
-            visibility: "hidden"
-          },
-          "100%": {
-            width: "100%"
-          }
-        },
-        blink: {
-          "50%": {
-            borderColor: "transparent"
-          },
-          "100%": {
-            borderColor: "white"
-          }
-        }
-      },
       animation: {
-        typing: "typing 2s steps(100) infinite alternate, blink .4s infinite"
-      }
+        gradientMove: "gradientMove 12s ease infinite",
+      },
+      keyframes: {
+        gradientMove: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+      },
     },
   },
-  plugins: [],
 });
-

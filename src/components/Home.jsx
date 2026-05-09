@@ -1,73 +1,75 @@
-/* 
-NOTE - THIS IS MY MAIN REPO FOR MY WEBSITE!
-*/
+export default function Home() {
+  return (
+    <section className="min-h-screen flex items-center px-6 relative overflow-hidden bg-[#0b0b0f]">
 
+      {/* subtle animated gradient (keep ONE system only) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-600/10 bg-[length:200%_200%] animate-gradientMove" />
 
-import React from "react";
-import { ChevronDown } from "lucide-react";
-import LisaTransparent from "../assets/lisatransglasses.png"; // Background-removed image
-import CodeBG from "../assets/webdev1.png"; //background image
+      {/* soft glow (much more subtle than before) */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[180px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-1/4 w-[500px] h-[500px] bg-purple-600 blur-[180px] rounded-full" />
+      </div>
 
-const Home = () => {
-    return (
-        <section
-            id="home"
-            className="relative w-screen min-h-screen overflow-hidden text-white pt-24 px-6 lg:px-16
-             bg-no-repeat bg-cover bg-center"
-            style={{
-                backgroundImage: `url(${CodeBG})`,
-            }}
-        >
-            {/* <img
-                src={SpaceBG}
-                alt="planet bg"
-                className="h-[full] sm:h-[full] lg:h-[full] "
-            /> */}
+      {/* CONTENT */}
+      <div className="max-w-6xl mx-auto relative z-10">
 
-            {/* Background gradient overlay */}
-            <div className="absolute inset-0 bg-black/80 z-0" />
+        {/* role label */}
+        <p className="text-cyan-400 tracking-[0.25em] uppercase text-xs mb-4">
+          Frontend Developer • React • UI Engineering
+        </p>
 
+        {/* headline */}
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          I build{" "}
+          <span className="text-cyan-300">
+            modern web applications
+          </span>{" "}
+          with React
+        </h1>
 
-            {/* Content container */}
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full h-full">
+        {/* description */}
+        <p className="text-zinc-400 mt-6 max-w-xl leading-relaxed">
+          I design and develop performant, scalable interfaces using React,
+          TailwindCSS and modern frontend architecture. Focused on clean UI,
+          UX and maintainable code.
+        </p>
 
-                {/* Left: Text Content */}
-                <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center w-full lg:w-1/2 gap-6">
+        {/* tech stack */}
+        <div className="flex flex-wrap gap-2 mt-6">
+          {["React", "TailwindCSS", "TypeScript", "Node.js", "UI/UX"].map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5 text-zinc-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
 
-                    {/* Vertical on desktop, horizontal on mobile */}
-                    <div className="text-blue-400  text-2xl lg:text-5xl uppercase whitespace-nowrap lg:transform lg:-rotate-90">
-                        Welcome to my portfolio
-                    </div>
+        {/* buttons */}
+        <div className="mt-10 flex gap-4">
+          <a
+            href="#work"
+            className="px-6 py-3 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/25 transition"
+          >
+            View Projects
+          </a>
 
-                    {/* Name Text */}
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight text-white">
-                            <span className="block text-4xl">Hi! I'm</span>
-                            <span className="block">LISA</span>
-                            <span className="block text-cyan-400 tracking-tight">DOWNIE</span>
-                            <span className="block text-3xl">a front end web and app developer</span>
-                        </h1>
-                    </div>
-                </div>
+          <a
+            href="#contact"
+            className="px-6 py-3 rounded-xl border border-white/10 text-white hover:border-cyan-500/30 hover:text-cyan-300 transition"
+          >
+            Contact Me
+          </a>
+        </div>
 
-                {/* Right: Full-height Image */}
-                <div className="w-full lg:w-1/2 flex items-center justify-center mt-10 lg:mt-0">
-                    <img
-                        src={LisaTransparent}
-                        alt="Lisa Downie portrait"
-                        className="h-[60vh] sm:h-[70vh] lg:h-[80vh] object-contain drop-shadow-[0_0_60px_rgba(0,255,255,0.3)]"
-                    />
-                </div>
-            </div>
+        {/* subtle status line */}
+        <p className="text-zinc-500 text-sm mt-8">
+          Currently building: AI workflow tools & interactive dashboards
+        </p>
 
-            {/* Scroll indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-white">
-                <span className="text-xs tracking-widest uppercase mb-1">Scroll</span>
-                <ChevronDown className="animate-bounce" size={28} />
-            </div>
-        </section>
-    );
-};
-
-
-export default Home;
+      </div>
+    </section>
+  );
+}

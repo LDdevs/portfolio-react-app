@@ -1,72 +1,102 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
+export default function ActiveSlider() {
+  const items = [
+    {
+      title: "UI Experiments",
+      desc: "Small interface studies focused on motion, layout, and interaction patterns.",
+    },
+    {
+      title: "Component Prototypes",
+      desc: "Rapidly built UI components exploring reusable design systems.",
+    },
+    {
+      title: "Frontend Studies",
+      desc: "Practice builds focused on improving React structure and performance.",
+    },
+    {
+      title: "Design-to-Code",
+      desc: "Translating UI designs into responsive React components with Tailwind.",
+    },
+  ];
 
-import React from 'react';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+  const [active, setActive] = useState(0);
 
-import { FreeMode, Pagination } from "swiper/modules";
+  const next = () => setActive((prev) => (prev + 1) % items.length);
+  const prev = () => setActive((prev) => (prev - 1 + items.length) % items.length);
 
-import { RxArrowTopRight } from "react-icons/rx";
-import { ServiceData } from "../constants";
-import { Link } from 'react-scroll'
-
-const ActiveSlider = () => {
   return (
-    <div name='services' className="flex items-center justify-center flex-col sm:space-x-8  min-w-10px sm:min-h-[100vh] lg:h-[1400px] md:w-[100%] bg-[#6c34af]">
-      <p className='text-white mb-6 text-4xl font-bold inline hover:border-b-4 border-[#ff66c4]'>Services</p>
-      <Swiper
-        breakpoints={{
-          340: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          700: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          1200: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-          },
-        }}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination]}
-        className="max-w-[90%] lg:max-w-[50%]"
-      >
-        {ServiceData.map((item) => (
-          <SwiperSlide key={item.title}>
-            <div className=" z-0 flex flex-col md:gap-6 justify-ce mb-0 group relative shadow-lg text-white rounded-xl px-6 py-10 h-[250px] w-full sm:w-full xs-w-full lg:h-[100%]  lg:w-full xl:h-[650px] overflow-hidden   ">
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-opacity-100"
-                style={{ backgroundImage: `url(${item.backgroundImage})` }}
-              />
-              <div className="absolute inset-0 bg-[#6c34af] opacity-10 group-hover:opacity-50" />
-              <div className="relative flex flex-col gap-3">
-                <item.icon className="text-blue-600  w-[32px] h-[32px]" />
-                <h1 className="text-xl lg:text-2xl text-white">{item.title} </h1>
-                <p className="lg:text-[18px] lg:block hidden">{item.content} </p>
-              </div>
-              <RxArrowTopRight className="absolute bottom-5 left-5 w-[35px] h-[35px] text-white group-hover:text-blue-500 group-hover:rotate-45 duration-100" />
-              {/* <Popup trigger={<button className="absolute bottom-5 right-5 w-[295px] h-[35px] text-white group-hover:text-white-500 duration-100 bg-[#ff66c4] rounded-xl hover:border-b-4 xs-font-[12px] ">Contact me below</button>} position="right center">
-          <div className="">Not Quite Yet!!</div>
-        </Popup> */}
+    <section className="py-24 bg-[#0b0b0f] text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <div className="mb-12">
+          <p className="text-xs tracking-[0.3em] uppercase text-zinc-500">
+            Active Work
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-semibold mt-4">
+            Things I’m exploring right now
+          </h2>
+
+          <p className="text-zinc-500 mt-4 max-w-2xl">
+            A rotating snapshot of experiments, prototypes, and ongoing frontend
+            development work.
+          </p>
+        </div>
+
+        {/* Slider */}
+        <div className="relative border border-white/10 rounded-2xl p-8 bg-white/5 overflow-hidden">
+          <div className="transition-all duration-500">
+            <p className="text-xs uppercase tracking-wider text-zinc-500 mb-3">
+              {String(active + 1).padStart(2, "0")} / {items.length}
+            </p>
+
+            <h3 className="text-2xl font-medium mb-4">
+              {items[active].title}
+            </h3>
+
+            <p className="text-zinc-500 leading-relaxed max-w-xl">
+              {items[active].desc}
+            </p>
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-between mt-10">
+            <button
+              onClick={prev}
+              className="px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition text-sm"
+            >
+              Prev
+            </button>
+
+            <div className="flex gap-2">
+              {items.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`w-2 h-2 rounded-full transition $ {
+                    i === active ? "bg-white" : "bg-zinc-600"
+                  }`}
+                />
+              ))}
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className="flex inline">
-        <p className='text-white mb-6 mt-5 text-5l font-bold inline p-4'>For more information on packages or a Quote use the contact form at the bottom of the page. </p>
 
+            <button
+              onClick={next}
+              className="px-4 py-2 rounded-lg border border-white/10 hover:border-white/30 transition text-sm"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        {/* Footer note */}
+        <div className="mt-10 text-center">
+          <p className="text-zinc-500 text-sm">
+            Continuous experimentation is part of my development process.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default ActiveSlider;
+}

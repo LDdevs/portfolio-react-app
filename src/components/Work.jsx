@@ -1,176 +1,98 @@
-import React from 'react'
-import ToDo from '../assets/to-do-carousel.png';
-import Break from '../assets/breakwebsite-top.jpeg';
-import Tictac from '../assets/tictac-carousel.png';
-import ComingSoon from '../assets/cs-carousel.png';
-import WorkImg from '../assets/workImg.jpeg';
-import LD from '../assets/LDlogo.png';
-import Portfolio from '../assets/portfolio.png';
-import WedInv from '../assets/home-wi.png';
-import DSPH from '../assets/dreamsphere.jpeg';
+import wireframe from "../assets/wireframe.png";
+import event from "../assets/event1.jpeg";
+import wolf from "../assets/wolf.jpeg";
 
-const Work = () => {
-    return (
-        <div name='work' className='w-full md:h-screen text-gray-300 bg-[#0a192f]'>
-            <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-                <div className='pb-8 '>
-                    <p className='text-4xl font-bold inline border-b-4 border-[#ff66c4]'>Work</p>
-                    <p className='py-6'>// Check out some of my latest projects</p>
-                </div>
+export default function Work() {
+  const projects = [
+    {
+      title: "Event Management System",
+      desc: "Full-stack event planning platform.",
+      status: "Active",
+      img: event,
+    },
+    {
+      title: "AI Workflow System",
+      desc: "Automation platform using AI + APIs.",
+      status: "In Progress",
+      img: wolf,
+    },
+    
+    {
+      title: "Dashboard UI",
+      desc: "Realtime analytics interface.",
+      status: "Prototype",
+      img: wireframe,
+    },
+  ];
 
-                {/* Container */}
-                <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
+  return (
+    <section id="work" className="py-24 px-6 bg-[#0b0b0f]">
 
-                    {/* Grid Item */}
-                    <div style={{ backgroundImage: `url(${Portfolio})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '>
+      <div className="max-w-6xl mx-auto">
 
-                        {/* Hover Effects */}
-                        <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                Website Development - Portfolio Website
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="https://lisadownie.netlify.app/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="https://github.com/LDdevs/portfolio2">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <h2 className="text-4xl font-bold mb-12">
+          Projects I’m building
+        </h2>
 
-                    <div style={{ backgroundImage: `url(${WedInv})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '>
+        <div className="grid md:grid-cols-3 gap-8">
 
-                        {/* Hover Effects */}
-                        <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                    Digital Wedding Invitation
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="https://weddinginvitesample.netlify.app/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="https://github.com/LDdevs/WeddingInvitationsample">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          {projects.map((p) => (
+            <div
+              key={p.title}
+              className="
+                group relative rounded-2xl overflow-hidden
+                border border-white/10 bg-white/5
+                transition duration-300
+                hover:-translate-y-2
+                hover:border-cyan-500/30
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
+              "
+            >
 
-                    <div style={{ backgroundImage: `url(${DSPH})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '>
+              {/* image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="
+                    w-full h-full object-cover
+                    transition duration-500
+                    group-hover:scale-110
+                    opacity-90 group-hover:opacity-100
+                  "
+                />
 
-                        {/* Hover Effects */}
-                        <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                    DreamSphere - Bucket List Social Platform (WIP)
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="https://dreamspheresocial.netlify.app/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="https://github.com/LDdevs/DreamSphereSocial">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* overlay glow */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              </div>
 
-                    <div style={{ backgroundImage: `url(${Break})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '>
+              {/* content */}
+              <div className="p-6">
 
-                        {/* Hover Effects */}
-                        <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                Website Development - Break Website
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="https://breakwebsite.netlify.app/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="https://github.com/LDdevs/BreakWebsite">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                <span className="text-cyan-300 text-xs">
+                  {p.status}
+                </span>
 
-                    <div style={{ backgroundImage: `url(${Tictac})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '>
+                <h3 className="text-xl font-semibold mt-2">
+                  {p.title}
+                </h3>
 
-                        {/* Hover Effects */}
-                        <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                Java Application - TicTacToe Game
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="https://github.com/LDdevs/TicTacToe">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style={{ backgroundImage: `url(${ToDo})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '>
+                <p className="text-zinc-400 text-sm mt-2">
+                  {p.desc}
+                </p>
 
-                        {/* Hover Effects */}
-                        <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                    Java Application - ToDo List
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="https://github.com/LDdevs/To-Do-List">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <button className="mt-6 text-cyan-300 text-sm hover:text-cyan-200 transition">
+                  View project →
+                </button>
 
-                    
-
-                    {/* <div style={{ backgroundImage: `url(${DSPH})` }} className='shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto content-div '> */}
-
-                        {/* Hover Effects */}
-                        {/* <div className='opacity-0 group-hover:opacity-100'>
-                            <div>
-                                <span className='text-2xl font-bold text-white tracking-wider'>
-                                    DreamSphere - Bucket List Social Platform (WIP)
-                                </span>
-                                <div className='pt-8 text-center '>
-                                    <a href="/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                                    </a>
-                                    <a href="/">
-                                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-
-
-                </div>
+              </div>
 
             </div>
-        </div>
-    )
-}
+          ))}
 
-export default Work
+        </div>
+
+      </div>
+    </section>
+  );
+}

@@ -1,38 +1,72 @@
-import React from 'react'
-import Lisa from '../assets/lisa2.png';
+import lisa from "../assets/lisapretty.png";
 
-const About = () => {
+export default function About() {
     return (
-        <div name='about' className='w-full h-screen bg-[#0a192f] text-gray-300'>
-            <div className='flex flex-col justify-center items-center w-full h-full'>
-                <div className='max-w-[1000px] w-full grid grid-cols-2 gap-8'>
-                    <div className='sm:text-right pb-8 pl-4'>
-                        <p className='text-4xl font-bold inline border-b-4 border-[#ff66c4]'>About</p>
-                    </div>
-                    <div>
+        <section id="about" className="py-24 px-6 relative overflow-hidden bg-[#0b0b0f]">
 
-                    </div>
-                </div>
-                <div  className='max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4'>
-                    <div className='sm:text-right text-3xl font-bold'>
-
-                        <p id='scroll-reveal'>hello, I'm Lisa, nice to meet you. Please take a look around.</p></div>
-                        <div className='font-2xl'>
-                            <p>With a strong foundation in HTML, CSS, and JavaScript,
-                                I specialize in transforming ideas into responsive and intuitive web applications.
-                                My dedication to staying current with the latest trends and technologies ensures that every project
-                                I undertake is not just functional but also cutting-edge.</p>
-                        </div>
-                    {/* <div className='rounded-8xl mx-auto  md:w-full'>
-                        <img src={Lisa} alt="Lisa Downie" />
-                    </div> */}
-
-                </div>
+            {/* background glow (matches rest of site) */}
+            <div className="absolute inset-0 -z-10 pointer-events-none opacity-20">
+                <div className="absolute top-[-20%] left-1/3 w-[450px] h-[450px] bg-cyan-500 blur-[160px] rounded-full" />
+                <div className="absolute bottom-[-20%] right-1/3 w-[450px] h-[450px] bg-purple-600 blur-[180px] rounded-full" />
             </div>
-        </div>
 
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-    )
+                {/* IMAGE WITH GLOW FRAME */}
+                <div className="relative group">
+
+                    {/* glowing outline */}
+                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-500/40 to-purple-600/30 blur-lg opacity-60 group-hover:opacity-80 transition duration-300" />
+
+                    {/* image container */}
+                    <div className="relative rounded-2xl overflow-hidden border border-white/10">
+
+                        <img
+                            src={lisa}
+                            alt="me"
+                            className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                        />
+
+                        {/* subtle overlay for depth */}
+                        <div className="absolute inset-0 bg-black/10" />
+
+                    </div>
+                </div>
+
+                {/* TEXT CONTENT */}
+                <div>
+
+                    {/* section label */}
+                    <p className="text-xs tracking-[0.3em] uppercase text-cyan-400">
+                        About
+                    </p>
+
+                    {/* heading */}
+                    <h2 className="text-3xl font-semibold mt-4">
+
+                        <span className="relative inline-block mr-2">
+                            <span className="relative z-10">Who</span>
+                            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+                               w-16 h-16 bg-purple-500/30 blur-2xl rounded-full -z-10" />
+                        </span>
+
+                        I am
+                    </h2>
+
+                    {/* description */}
+                    <p className="text-zinc-400 mt-6 leading-relaxed">
+                        Frontend developer focused on React systems, UI architecture,
+                        and building clean, scalable digital experiences.
+                    </p>
+
+                    <p className="text-zinc-500 mt-4 leading-relaxed">
+                        I enjoy crafting interfaces that balance performance, usability,
+                        and visual clarity.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+    );
 }
-
-export default About
